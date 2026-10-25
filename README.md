@@ -12,13 +12,11 @@
 | `donate.html` | Full donation flow — reveal, copy, TxID form |
 | `about.html` | Founded 2013, what we do, who runs it |
 | `journey.html` | Real history — dated milestones from newspaper record |
-| `notice.html` | August 26, 2024 flood appeal — Cumilla, Feni, Noakhali |
+| `notice.html` | Notice Board — expandable sections (revamp 2026, flood appeal 2024, past relief) |
 | `programs.html` | Relief, winter clothes, education & community |
 | `impact.html` | Dated record of documented work + financial pie chart |
 | `stories.html` | Two real excerpts — the flood appeal, the dropout boy |
-| `team.html` | The 19-member executive committee (BN/EN names & roles) |
-| `advisors.html` | Advisory council (being formed) |
-| `revamp.html` | Revamp meeting, March 23, 2026 — eleven decisions |
+| `team.html` | Tabs: 19-member executive committee + advisory council |
 | `get-involved.html` | Volunteer application form |
 | `contact.html` | Contact form + details |
 | `why-us.html` | How we work — 3 short paragraphs |

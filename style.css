@@ -113,6 +113,35 @@
 body.lang-en .text-bn { display: none; }
 body.lang-bn .text-en { display: none; }
 
+/* ── NOTICE BOARD (native details/summary) ── */
+.noticeboard details { border-bottom: 1px solid var(--border); }
+.noticeboard summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 20px 0;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--forest);
+  transition: color .15s;
+}
+.noticeboard summary:hover { color: var(--coral); }
+.noticeboard summary::-webkit-details-marker { display: none; }
+.noticeboard summary::before {
+  content: '+';
+  font-family: var(--sans);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--coral);
+  flex-shrink: 0;
+}
+.noticeboard details[open] summary::before { content: '-'; }
+.noticeboard summary:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
+.noticeboard details > div { padding: 4px 0 32px 34px; }
+
 /* ── RESET ── */
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
 html { scroll-behavior:smooth; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }

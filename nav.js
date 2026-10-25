@@ -1,28 +1,29 @@
 /* nav.js — injects notice bar + navbar + footer; dark mode, Bangla/English toggle, mobile menu */
 (function(){
-  // Language: pages carry <body class="lang-bn"> by default; swap early if saved
-  if(localStorage.getItem('swapnonir-lang')==='en'){
-    document.body.classList.remove('lang-bn');
-    document.body.classList.add('lang-en');
-    document.documentElement.lang='en';
-  }
+  // Language: pages carry <body class="lang-bn"> by default; swap early if saved.
+  // Body must always end up with exactly one lang class so only one of
+  // .text-bn / .text-en is ever visible.
+  (function(){
+    const body = document.body;
+    const en = localStorage.getItem('swapnonir-lang') === 'en';
+    body.classList.toggle('lang-en', en);
+    body.classList.toggle('lang-bn', !en);
+    document.documentElement.lang = en ? 'en' : 'bn';
+  })();
 
   // Dismissible top notice — stays hidden once dismissed for this notice id
-  const NOTICE_ID = 'flood-2024-08';
+  const NOTICE_ID = 'notice-board';
   const noticeDismissed = localStorage.getItem('swapnonir-notice') === NOTICE_ID;
   const NOTICE = `
 <div id="site-notice" role="region" aria-label="নোটিশ / Notice" style="background:var(--coral);color:#fff">
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px">
-    <p style="font-size:14px;line-height:1.5;color:#fff">
-      <span class="text-bn">স্মরণকালের ভয়াবহ বন্যায় কুমিল্লা, ফেনী, নোয়াখালি প্লাবিত। পাশে দাঁড়ান।</span>
-      <span class="text-en">Devastating floods hit Cumilla, Feni, Noakhali. Stand beside them.</span>
-    </p>
-    <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
-      <a href="notice.html" style="font-size:13px;font-weight:700;color:#fff;text-decoration:underline;text-underline-offset:3px"><span class="text-bn">বিস্তারিত</span><span class="text-en">Details</span></a>
-      <button id="notice-dismiss" aria-label="বন্ধ করুন / Close notice" style="width:28px;height:28px;border:none;background:transparent;cursor:pointer;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-    </div>
+    <a href="notice.html" style="font-size:14px;font-weight:600;line-height:1.5;color:#fff;text-decoration:underline;text-underline-offset:3px">
+      <span class="text-bn">সাম্প্রতিক আপডেট ও নোটিশ দেখতে ক্লিক করুন।</span>
+      <span class="text-en">Click to see recent updates and notices.</span>
+    </a>
+    <button id="notice-dismiss" aria-label="বন্ধ করুন / Close notice" style="width:28px;height:28px;border:none;background:transparent;cursor:pointer;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
   </div>
 </div>`;
 
@@ -42,7 +43,6 @@
       <li><a href="impact.html"><span class="text-bn">প্রভাব</span><span class="text-en">Impact</span></a></li>
       <li><a href="stories.html"><span class="text-bn">গল্প</span><span class="text-en">Stories</span></a></li>
       <li><a href="team.html"><span class="text-bn">টিম</span><span class="text-en">Team</span></a></li>
-      <li><a href="revamp.html"><span class="text-bn">রিভ্যাম্প</span><span class="text-en">Revamp</span></a></li>
       <li><a href="get-involved.html"><span class="text-bn">যোগ দিন</span><span class="text-en">Get Involved</span></a></li>
       <li><a href="contact.html"><span class="text-bn">যোগাযোগ</span><span class="text-en">Contact</span></a></li>
     </ul>
@@ -68,8 +68,6 @@
       <li><a href="impact.html"><span class="text-bn">প্রভাব</span><span class="text-en">Impact</span></a></li>
       <li><a href="stories.html"><span class="text-bn">লেখা ও গল্প</span><span class="text-en">Stories</span></a></li>
       <li><a href="team.html"><span class="text-bn">টিম</span><span class="text-en">Team</span></a></li>
-      <li><a href="advisors.html"><span class="text-bn">উপদেষ্টা পরিষদ</span><span class="text-en">Advisors</span></a></li>
-      <li><a href="revamp.html"><span class="text-bn">রিভ্যাম্প সভা ২০২৬</span><span class="text-en">Revamp Meeting 2026</span></a></li>
       <li><a href="get-involved.html"><span class="text-bn">যোগ দিন</span><span class="text-en">Get Involved</span></a></li>
       <li><a href="why-us.html"><span class="text-bn">কেন আমরা</span><span class="text-en">Why Us</span></a></li>
       <li><a href="contact.html"><span class="text-bn">যোগাযোগ</span><span class="text-en">Contact</span></a></li>
@@ -112,8 +110,6 @@
         <ul class="footer-links">
           <li><a href="donate.html"><span class="text-bn">অনুদান দিন</span><span class="text-en">Donate</span></a></li>
           <li><a href="get-involved.html"><span class="text-bn">স্বেচ্ছাসেবী হন</span><span class="text-en">Volunteer</span></a></li>
-          <li><a href="advisors.html"><span class="text-bn">উপদেষ্টা পরিষদ</span><span class="text-en">Advisors</span></a></li>
-          <li><a href="revamp.html"><span class="text-bn">রিভ্যাম্প সভা ২০২৬</span><span class="text-en">Revamp 2026</span></a></li>
           <li><a href="why-us.html"><span class="text-bn">কেন আমরা</span><span class="text-en">Why Us</span></a></li>
         </ul>
       </div>

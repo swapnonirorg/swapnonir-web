@@ -1,5 +1,12 @@
-/* nav.js — injects navbar + footer, handles dark mode, mobile menu */
+/* nav.js — injects navbar + footer; dark mode, Bangla/English toggle, mobile menu */
 (function(){
+  // Language: pages carry <body class="lang-bn"> by default; swap early if saved
+  if(localStorage.getItem('swapnonir-lang')==='en'){
+    document.body.classList.remove('lang-bn');
+    document.body.classList.add('lang-en');
+    document.documentElement.lang='en';
+  }
+
   const NAV = `<nav class="navbar" aria-label="Main navigation">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo">
@@ -9,22 +16,25 @@
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">হোম</a></li>
-      <li><a href="about.html">সম্পর্কে</a></li>
-      <li><a href="programs.html">কার্যক্রম</a></li>
-      <li><a href="impact.html">প্রভাব</a></li>
-      <li><a href="stories.html">গল্প</a></li>
-      <li><a href="team.html">দল</a></li>
-      <li><a href="members.html">সদস্য</a></li>
-      <li><a href="get-involved.html">যোগ দিন</a></li>
-      <li><a href="contact.html">যোগাযোগ</a></li>
+      <li><a href="index.html"><span class="text-bn">হোম</span><span class="text-en">Home</span></a></li>
+      <li><a href="about.html"><span class="text-bn">সম্পর্কে</span><span class="text-en">About</span></a></li>
+      <li><a href="journey.html"><span class="text-bn">যাত্রা</span><span class="text-en">Journey</span></a></li>
+      <li><a href="programs.html"><span class="text-bn">কার্যক্রম</span><span class="text-en">Programs</span></a></li>
+      <li><a href="impact.html"><span class="text-bn">প্রভাব</span><span class="text-en">Impact</span></a></li>
+      <li><a href="stories.html"><span class="text-bn">গল্প</span><span class="text-en">Stories</span></a></li>
+      <li><a href="team.html"><span class="text-bn">দল</span><span class="text-en">Team</span></a></li>
+      <li><a href="members.html"><span class="text-bn">সদস্য</span><span class="text-en">Members</span></a></li>
+      <li><a href="revamp.html"><span class="text-bn">রিভ্যাম্প</span><span class="text-en">Revamp</span></a></li>
+      <li><a href="get-involved.html"><span class="text-bn">যোগ দিন</span><span class="text-en">Get Involved</span></a></li>
+      <li><a href="contact.html"><span class="text-bn">যোগাযোগ</span><span class="text-en">Contact</span></a></li>
     </ul>
     <div class="nav-actions">
-      <button class="btn-icon" data-dark-toggle aria-label="ডার্ক মোড">
+      <button class="lang-toggle" id="lang-toggle" aria-label="ভাষা বদলান / Switch language">বাং / EN</button>
+      <button class="btn-icon" data-dark-toggle aria-label="ডার্ক মোড / Dark mode">
         <span data-dark-icon></span>
       </button>
-      <a href="donate.html" class="btn btn-primary btn-sm" style="display:none" id="nav-donate">অনুদান দিন</a>
-      <button class="btn-icon nav-toggle" id="nav-toggle" style="display:none" aria-expanded="false" aria-label="মেনু">
+      <a href="donate.html" class="btn btn-primary btn-sm" style="display:none" id="nav-donate"><span class="text-bn">অনুদান দিন</span><span class="text-en">Donate</span></a>
+      <button class="btn-icon nav-toggle" id="nav-toggle" style="display:none" aria-expanded="false" aria-label="মেনু / Menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
@@ -33,21 +43,22 @@
   </div>
   <div class="mobile-menu" id="mobile-menu">
     <ul>
-      <li><a href="index.html">হোম</a></li>
-      <li><a href="about.html">আমাদের সম্পর্কে</a></li>
-      <li><a href="programs.html">কার্যক্রম</a></li>
-      <li><a href="impact.html">প্রভাব</a></li>
-      <li><a href="stories.html">সাফল্যের গল্প</a></li>
-      <li><a href="team.html">দল</a></li>
-      <li><a href="members.html">সদস্যরা</a></li>
-      <li><a href="advisors.html">উপদেষ্টা পরিষদ</a></li>
-      <li><a href="doctor-bari.html">ডাক্তার বাড়ি</a></li>
-      <li><a href="get-involved.html">যোগ দিন</a></li>
-      <li><a href="why-us.html">কেন আমরা</a></li>
-      <li><a href="contact.html">যোগাযোগ</a></li>
+      <li><a href="index.html"><span class="text-bn">হোম</span><span class="text-en">Home</span></a></li>
+      <li><a href="about.html"><span class="text-bn">আমাদের সম্পর্কে</span><span class="text-en">About Us</span></a></li>
+      <li><a href="journey.html"><span class="text-bn">আমাদের যাত্রা</span><span class="text-en">Our Journey</span></a></li>
+      <li><a href="programs.html"><span class="text-bn">কার্যক্রম</span><span class="text-en">Programs</span></a></li>
+      <li><a href="impact.html"><span class="text-bn">প্রভাব</span><span class="text-en">Impact</span></a></li>
+      <li><a href="stories.html"><span class="text-bn">লেখা ও গল্প</span><span class="text-en">Stories</span></a></li>
+      <li><a href="team.html"><span class="text-bn">দল</span><span class="text-en">Team</span></a></li>
+      <li><a href="members.html"><span class="text-bn">সদস্যরা</span><span class="text-en">Members</span></a></li>
+      <li><a href="advisors.html"><span class="text-bn">উপদেষ্টা পরিষদ</span><span class="text-en">Advisors</span></a></li>
+      <li><a href="revamp.html"><span class="text-bn">রিভ্যাম্প সভা ২০২৬</span><span class="text-en">Revamp Meeting 2026</span></a></li>
+      <li><a href="get-involved.html"><span class="text-bn">যোগ দিন</span><span class="text-en">Get Involved</span></a></li>
+      <li><a href="why-us.html"><span class="text-bn">কেন আমরা</span><span class="text-en">Why Us</span></a></li>
+      <li><a href="contact.html"><span class="text-bn">যোগাযোগ</span><span class="text-en">Contact</span></a></li>
     </ul>
     <div class="mobile-actions">
-      <a href="donate.html" class="btn btn-primary btn-sm" style="flex:1;text-align:center">অনুদান দিন</a>
+      <a href="donate.html" class="btn btn-primary btn-sm" style="flex:1;text-align:center"><span class="text-bn">অনুদান দিন</span><span class="text-en">Donate</span></a>
     </div>
   </div>
 </nav>`;
@@ -60,55 +71,55 @@
           <div style="width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-family:var(--bangla);font-weight:700;color:#fff;font-size:13px">স্ব</div>
           <span style="color:#fff;font-weight:700;font-size:15px">স্বপ্ননীড় | Swapnonir</span>
         </div>
-        <p class="footer-tagline">শ্রীপুরের পাশে, প্রতিদিন।</p>
-        <a href="https://facebook.com/swapnonirorg" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:14px">
+        <p class="footer-tagline"><span class="text-bn">বিপরীতমুখী সমাজের বাস্তবতাকে মেনে নিয়ে নিশ্চিত ভবিষ্যৎ গড়ার প্রত্যয়ে...</span><span class="text-en">Facing the reality of an adverse society, determined to build a secure future...</span></p>
+        <a href="https://www.facebook.com/swapnonirorg/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:14px">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           facebook.com/swapnonirorg
         </a>
-        <div class="footer-notice">শুধুমাত্র অনুদান পেজে উল্লিখিত নম্বরে অনুদান পাঠান। স্বপ্ননীড় কখনো ফোনে বা মেসেঞ্জারে টাকা চায় না।</div>
+        <div class="footer-notice"><span class="text-bn">শুধুমাত্র অনুদান পেজে উল্লিখিত নম্বরে অনুদান পাঠান। স্বপ্ননীড় কখনো ফোনে বা মেসেঞ্জারে টাকা চায় না।</span><span class="text-en">Donate only to the numbers listed on the Donate page. Swapnonir never asks for money over phone or messenger.</span></div>
       </div>
       <div>
-        <h4>পেজসমূহ</h4>
+        <h4><span class="text-bn">পেজসমূহ</span><span class="text-en">Pages</span></h4>
         <ul class="footer-links">
-          <li><a href="index.html">হোম</a></li>
-          <li><a href="about.html">আমাদের সম্পর্কে</a></li>
-          <li><a href="programs.html">কার্যক্রম</a></li>
-          <li><a href="impact.html">প্রভাব</a></li>
-          <li><a href="stories.html">সাফল্যের গল্প</a></li>
-          <li><a href="team.html">আমাদের দল</a></li>
+          <li><a href="index.html"><span class="text-bn">হোম</span><span class="text-en">Home</span></a></li>
+          <li><a href="about.html"><span class="text-bn">আমাদের সম্পর্কে</span><span class="text-en">About Us</span></a></li>
+          <li><a href="journey.html"><span class="text-bn">আমাদের যাত্রা</span><span class="text-en">Our Journey</span></a></li>
+          <li><a href="programs.html"><span class="text-bn">কার্যক্রম</span><span class="text-en">Programs</span></a></li>
+          <li><a href="impact.html"><span class="text-bn">প্রভাব</span><span class="text-en">Impact</span></a></li>
+          <li><a href="stories.html"><span class="text-bn">লেখা ও গল্প</span><span class="text-en">Stories</span></a></li>
         </ul>
       </div>
       <div>
-        <h4>অংশগ্রহণ</h4>
+        <h4><span class="text-bn">অংশগ্রহণ</span><span class="text-en">Participation</span></h4>
         <ul class="footer-links">
-          <li><a href="donate.html">অনুদান দিন</a></li>
-          <li><a href="get-involved.html">স্বেচ্ছাসেবী হন</a></li>
-          <li><a href="members.html">সদস্যরা</a></li>
-          <li><a href="advisors.html">উপদেষ্টা পরিষদ</a></li>
-          <li><a href="doctor-bari.html">ডাক্তার বাড়ি</a></li>
-          <li><a href="why-us.html">কেন আমরা</a></li>
+          <li><a href="donate.html"><span class="text-bn">অনুদান দিন</span><span class="text-en">Donate</span></a></li>
+          <li><a href="get-involved.html"><span class="text-bn">স্বেচ্ছাসেবী হন</span><span class="text-en">Volunteer</span></a></li>
+          <li><a href="members.html"><span class="text-bn">সদস্যরা</span><span class="text-en">Members</span></a></li>
+          <li><a href="advisors.html"><span class="text-bn">উপদেষ্টা পরিষদ</span><span class="text-en">Advisors</span></a></li>
+          <li><a href="revamp.html"><span class="text-bn">রিভ্যাম্প সভা ২০২৬</span><span class="text-en">Revamp 2026</span></a></li>
+          <li><a href="why-us.html"><span class="text-bn">কেন আমরা</span><span class="text-en">Why Us</span></a></li>
         </ul>
       </div>
       <div>
-        <h4>যোগাযোগ</h4>
+        <h4><span class="text-bn">যোগাযোগ</span><span class="text-en">Contact</span></h4>
         <ul class="footer-links">
           <li><a href="mailto:org.swapnonir@gmail.com" style="display:flex;align-items:center;gap:6px">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             org.swapnonir@gmail.com
           </a></li>
-          <li style="display:flex;align-items:center;gap:6px;font-size:14px">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            শ্রীপুর, গাজীপুর, বাংলাদেশ
+          <li style="display:flex;align-items:flex-start;gap:6px;font-size:14px">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:4px"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span><span class="text-bn">শ্রীপুর, দেবীদ্বার, কুমিল্লা - ৩৫১০</span><span class="text-en">Sreepur, Debidwar, Cumilla - 3510, Bangladesh</span></span>
           </li>
-          <li style="margin-top:8px"><a href="contact.html" class="btn btn-ghost btn-sm">বার্তা পাঠান</a></li>
+          <li style="margin-top:8px"><a href="contact.html" class="btn btn-ghost btn-sm"><span class="text-bn">বার্তা পাঠান</span><span class="text-en">Send a Message</span></a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="fy"></span> স্বপ্ননীড় (Swapnonir). সর্বস্বত্ব সংরক্ষিত।</span>
+      <span>© <span id="fy"></span> স্বপ্ননীড় (Swapnonir). <span class="text-bn">সর্বস্বত্ব সংরক্ষিত।</span><span class="text-en">All rights reserved.</span></span>
       <div class="footer-legal">
-        <a href="legal.html">গোপনীয়তা নীতি</a>
-        <a href="legal.html">ব্যবহারের শর্ত</a>
+        <a href="legal.html"><span class="text-bn">গোপনীয়তা নীতি</span><span class="text-en">Privacy</span></a>
+        <a href="legal.html"><span class="text-bn">ব্যবহারের শর্ত</span><span class="text-en">Terms</span></a>
       </div>
     </div>
   </div>
@@ -131,6 +142,15 @@
     const page = location.pathname.split('/').pop()||'index.html';
     document.querySelectorAll('.nav-links a,.mobile-menu a').forEach(a=>{
       if(a.getAttribute('href')===page) a.classList.add('active');
+    });
+
+    // Language toggle
+    document.getElementById('lang-toggle')?.addEventListener('click',()=>{
+      const en = !document.body.classList.contains('lang-en');
+      document.body.classList.toggle('lang-en', en);
+      document.body.classList.toggle('lang-bn', !en);
+      document.documentElement.lang = en ? 'en' : 'bn';
+      localStorage.setItem('swapnonir-lang', en ? 'en' : 'bn');
     });
 
     // Dark mode icons

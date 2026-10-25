@@ -7,22 +7,27 @@
 | `server.js` | Local server — static files + form API (`/api/donate`, `/api/volunteer`, `/api/contact`) |
 | `style.css` | ALL styling — design tokens, components, layouts |
 | `main.js` | ALL logic — counters, forms, pie chart, member filter |
-| `nav.js` | Injects navbar + footer into every page |
+| `nav.js` | Injects navbar + footer; dark mode; Bangla/English toggle (`বাং / EN`) |
 | `index.html` | Home — hero, prose, program list, pull-quote, donate strip |
 | `donate.html` | Full donation flow — reveal, copy, TxID form |
-| `about.html` | How it started, what it does, who runs it |
-| `programs.html` | 3 programs with detail |
-| `impact.html` | This year's account + financial pie chart |
-| `stories.html` | Success stories |
+| `about.html` | Founded 2013, what we do, who runs it |
+| `journey.html` | Real history — dated milestones from newspaper record |
+| `programs.html` | Relief, winter clothes, education & community |
+| `impact.html` | Dated record of documented work + financial pie chart |
+| `stories.html` | Two real excerpts — the flood appeal, the dropout boy |
 | `team.html` | The team, in brief |
 | `members.html` | Member directory with filter + search |
 | `advisors.html` | Advisory council (being formed) |
-| `doctor-bari.html` | Heritage timeline page |
+| `revamp.html` | Revamp meeting, March 23, 2026 — eleven decisions |
 | `get-involved.html` | Volunteer application form |
 | `contact.html` | Contact form + details |
 | `why-us.html` | How we work — 3 short paragraphs |
 | `legal.html` | Privacy, terms, official notice |
 | `404.html` | Not found page |
+
+Bangla is the default language. The `বাং / EN` button in the navbar toggles
+Bangla/English (persisted in `localStorage`, driven by `.text-bn`/`.text-en`
+spans and `body.lang-bn`/`body.lang-en` classes in `style.css`).
 
 ## Run locally
 ```bash

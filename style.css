@@ -91,6 +91,28 @@
   --border: #3A4F48;
 }
 
+/* ── LANGUAGE TOGGLE ── */
+.lang-toggle {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: var(--forest);
+  background: transparent;
+  border: 1px solid var(--forest);
+  border-radius: var(--r);
+  height: 36px;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.lang-toggle:hover { background: var(--forest); color: #fff; }
+.lang-toggle:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
+
+/* Bangla default / English toggle — spans coexist, CSS shows one */
+body.lang-en .text-bn { display: none; }
+body.lang-bn .text-en { display: none; }
+
 /* ── RESET ── */
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
 html { scroll-behavior:smooth; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
@@ -854,7 +876,7 @@ p   { color: var(--text-2); line-height: 1.7; }
 }
 
 /* ── RESPONSIVE OVERRIDES ── */
-@media(max-width:1023px) { .nav-links { display:none; } .nav-toggle { display:flex !important; } }
+@media(max-width:1199px) { .nav-links { display:none; } .nav-toggle { display:flex !important; } }
 @media(max-width:767px)  { .hero { min-height:auto; } }
 @media(max-width:599px)  {
   :root { --gutter:16px; --sp-section:64px; }

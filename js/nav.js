@@ -49,9 +49,16 @@
       <li><a href="contact.html"><span class="text-bn">যোগাযোগ</span><span class="text-en">Contact</span></a></li>
     </ul>
     <div class="nav-actions">
-      <button class="lang-toggle" id="lang-toggle" aria-label="ভাষা বদলান / Switch language">বাং / EN</button>
-      <button class="btn-icon" data-dark-toggle aria-label="ডার্ক মোড / Dark mode">
-        <span data-dark-icon></span>
+      <div class="language-toggle" role="group" aria-label="ভাষা বদলান / Switch language">
+        <button class="lang-btn active" data-lang="bn" type="button">বাং</button>
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark/light mode">
+        <span class="theme-icon">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="theme-label">Light</span>
       </button>
       <a href="donate.html" class="btn btn-primary btn-sm" style="display:none" id="nav-donate"><span class="text-bn">অনুদান দিন</span><span class="text-en">Donate</span></a>
       <button class="btn-icon nav-toggle" id="nav-toggle" style="display:none" aria-expanded="false" aria-label="মেনু / Menu">
@@ -84,31 +91,6 @@
 
   const FOOTER = `<footer class="footer">
 
-  <div class="footer-cta">
-    <div class="container">
-      <h2><span class="text-bn">পাশে দাঁড়ান</span><span class="text-en">Stand Beside Us</span></h2>
-      <p><span class="text-bn">প্রতি ১০০ টাকার ৬০ টাকা সরাসরি কাজে যায়।</span><span class="text-en">Of every 100 taka, 60 goes straight to the work.</span></p>
-      <div class="footer-bars">
-        <div class="footer-bar-row">
-          <div class="footer-bar"><span style="width:60%"></span></div>
-          <span class="footer-bar-label">60% <span class="text-bn">কাজে</span><span class="text-en">to work</span></span>
-        </div>
-        <div class="footer-bar-row">
-          <div class="footer-bar"><span style="width:20%"></span></div>
-          <span class="footer-bar-label">20% <span class="text-bn">পরিচালনা</span><span class="text-en">operations</span></span>
-        </div>
-        <div class="footer-bar-row">
-          <div class="footer-bar"><span style="width:20%"></span></div>
-          <span class="footer-bar-label">20% <span class="text-bn">যোগাযোগ</span><span class="text-en">communication</span></span>
-        </div>
-      </div>
-      <div class="footer-cta-btns">
-        <a href="donate.html" class="btn btn-primary"><span class="text-bn">অনুদান দিন</span><span class="text-en">Donate</span></a>
-        <a href="contact.html" class="btn btn-secondary"><span class="text-bn">কথা বলুন</span><span class="text-en">Get in Touch</span></a>
-      </div>
-    </div>
-  </div>
-
   <div class="container">
     <div class="footer-grid">
       <div>
@@ -135,7 +117,12 @@
           <li><a href="programs.html"><span class="text-bn">কার্যক্রম</span><span class="text-en">Programs</span></a></li>
           <li><a href="stories.html"><span class="text-bn">লেখা ও গল্প</span><span class="text-en">Stories</span></a></li>
           <li><a href="team.html"><span class="text-bn">টিম</span><span class="text-en">Team</span></a></li>
-          <li><a href="impact.html"><span class="text-bn">প্রভাব</span><span class="text-en">Impact</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="text-bn">অংশগ্রহণ</span><span class="text-en">Participation</span></h4>
+        <ul class="footer-links">
+          <li><a href="donate.html"><span class="text-bn">অনুদান দিন</span><span class="text-en">Donate</span></a></li>
           <li><a href="get-involved.html"><span class="text-bn">যোগ দিন</span><span class="text-en">Get Involved</span></a></li>
           <li><a href="notice.html"><span class="text-bn">নোটিশ</span><span class="text-en">Notice</span></a></li>
           <li><a href="contact.html"><span class="text-bn">যোগাযোগ</span><span class="text-en">Contact</span></a></li>
@@ -166,8 +153,6 @@
   </div>
 </footer>`;
 
-  const SUN=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
-  const MOON=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
 
   // Apply saved theme immediately
   if(localStorage.getItem('swapnonir-theme')==='dark') document.documentElement.classList.add('dark');
@@ -192,26 +177,35 @@
       if(a.getAttribute('href')===page) a.classList.add('active');
     });
 
-    // Language toggle
-    document.getElementById('lang-toggle')?.addEventListener('click',()=>{
-      const en = !document.body.classList.contains('lang-en');
+    // Language toggle (two-button pill)
+    function setLang(lang){
+      const en = lang === 'en';
       document.body.classList.toggle('lang-en', en);
       document.body.classList.toggle('lang-bn', !en);
       document.documentElement.lang = en ? 'en' : 'bn';
-      localStorage.setItem('swapnonir-lang', en ? 'en' : 'bn');
-    });
-
-    // Dark mode icons
-    function syncIcons(){
-      const dark = document.documentElement.classList.contains('dark');
-      document.querySelectorAll('[data-dark-icon]').forEach(el=>{ el.innerHTML=dark?SUN:MOON; });
+      localStorage.setItem('swapnonir-lang', lang);
+      document.querySelectorAll('.lang-btn').forEach(b=>{
+        const active = b.dataset.lang === lang;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-pressed', active);
+      });
     }
-    syncIcons();
-    document.querySelectorAll('[data-dark-toggle]').forEach(btn=>{
+    document.querySelectorAll('.lang-btn').forEach(b=>{
+      b.addEventListener('click',()=>setLang(b.dataset.lang));
+    });
+    setLang(localStorage.getItem('swapnonir-lang') || 'bn');
+
+    // Theme toggle (icon + Light/Dark label)
+    function updateThemeUI(){
+      const dark = document.documentElement.classList.contains('dark');
+      document.querySelectorAll('.theme-label').forEach(el=>{ el.textContent = dark ? 'Dark' : 'Light'; });
+    }
+    updateThemeUI();
+    document.querySelectorAll('.theme-toggle').forEach(btn=>{
       btn.addEventListener('click',()=>{
         document.documentElement.classList.toggle('dark');
         localStorage.setItem('swapnonir-theme', document.documentElement.classList.contains('dark')?'dark':'light');
-        syncIcons();
+        updateThemeUI();
       });
     });
 

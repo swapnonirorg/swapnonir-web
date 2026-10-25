@@ -30,7 +30,7 @@
   const NAV = `<nav class="navbar" aria-label="Main navigation">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-mark"><img src="assets/Shonponir_logo.svg" alt="Swapnonir Logo" style="width:100%;height:100%;object-fit:contain;border-radius:var(--r-md);"></div>
+      <div class="nav-logo-mark"><img src="assets/icons/Shonponir_logo.svg" alt="Swapnonir Logo" style="width:100%;height:100%;object-fit:contain;border-radius:var(--r-md);"></div>
       <div class="nav-logo-text">
         <span>স্বপ্ননীড়</span><span>Swapnonir</span>
       </div>
@@ -43,6 +43,7 @@
       <li><a href="impact.html"><span class="text-bn">প্রভাব</span><span class="text-en">Impact</span></a></li>
       <li><a href="stories.html"><span class="text-bn">গল্প</span><span class="text-en">Stories</span></a></li>
       <li><a href="team.html"><span class="text-bn">টিম</span><span class="text-en">Team</span></a></li>
+      <li><a href="family-tree.html"><span class="text-bn">বংশ তালিকা</span><span class="text-en">Family Tree</span></a></li>
       <li><a href="get-involved.html"><span class="text-bn">যোগ দিন</span><span class="text-en">Get Involved</span></a></li>
       <li><a href="notice.html"><span class="text-bn">নোটিশ</span><span class="text-en">Notice</span></a></li>
       <li><a href="contact.html"><span class="text-bn">যোগাযোগ</span><span class="text-en">Contact</span></a></li>
@@ -69,6 +70,7 @@
       <li><a href="impact.html"><span class="text-bn">প্রভাব</span><span class="text-en">Impact</span></a></li>
       <li><a href="stories.html"><span class="text-bn">লেখা ও গল্প</span><span class="text-en">Stories</span></a></li>
       <li><a href="team.html"><span class="text-bn">টিম</span><span class="text-en">Team</span></a></li>
+      <li><a href="family-tree.html"><span class="text-bn">বংশ তালিকা</span><span class="text-en">Family Tree</span></a></li>
       <li><a href="get-involved.html"><span class="text-bn">যোগ দিন</span><span class="text-en">Get Involved</span></a></li>
       <li><a href="why-us.html"><span class="text-bn">কেন আমরা</span><span class="text-en">Why Us</span></a></li>
       <li><a href="notice.html"><span class="text-bn">নোটিশ বোর্ড</span><span class="text-en">Notice Board</span></a></li>
@@ -85,7 +87,7 @@
     <div class="footer-grid">
       <div>
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-          <div style="width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,.18);overflow:hidden;display:flex;align-items:center;justify-content:center"><img src="assets/Shonponir_logo.svg" alt="Swapnonir Logo" style="width:100%;height:100%;object-fit:contain"></div>
+          <div style="width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,.18);overflow:hidden;display:flex;align-items:center;justify-content:center"><img src="assets/icons/Shonponir_logo.svg" alt="Swapnonir Logo" style="width:100%;height:100%;object-fit:contain"></div>
           <span style="color:#fff;font-weight:700;font-size:15px">স্বপ্ননীড় | Swapnonir</span>
         </div>
         <p class="footer-tagline"><span class="text-bn">বিপরীতমুখী সমাজের বাস্তবতাকে মেনে নিয়ে নিশ্চিত ভবিষ্যৎ গড়ার প্রত্যয়ে...</span><span class="text-en">Facing the reality of an adverse society, determined to build a secure future...</span></p>
@@ -102,6 +104,7 @@
           <li><a href="about.html"><span class="text-bn">আমাদের সম্পর্কে</span><span class="text-en">About Us</span></a></li>
           <li><a href="journey.html"><span class="text-bn">আমাদের যাত্রা</span><span class="text-en">Our Journey</span></a></li>
           <li><a href="team.html"><span class="text-bn">আমাদের টিম</span><span class="text-en">Our Team</span></a></li>
+          <li><a href="family-tree.html"><span class="text-bn">বংশ তালিকা</span><span class="text-en">Family Tree</span></a></li>
           <li><a href="programs.html"><span class="text-bn">কার্যক্রম</span><span class="text-en">Programs</span></a></li>
           <li><a href="impact.html"><span class="text-bn">প্রভাব</span><span class="text-en">Impact</span></a></li>
           <li><a href="stories.html"><span class="text-bn">লেখা ও গল্প</span><span class="text-en">Stories</span></a></li>

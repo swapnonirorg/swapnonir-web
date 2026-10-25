@@ -18,6 +18,7 @@
 | `impact.html` | Dated record of documented work + financial pie chart |
 | `stories.html` | Two real excerpts — the flood appeal, the dropout boy |
 | `team.html` | Tabs: 19-member executive committee + advisory council |
+| `family-tree.html` | Khan family tree — 7 generations, bilingual nodes, scrollable |
 | `get-involved.html` | Volunteer application form |
 | `contact.html` | Contact form + details |
 | `why-us.html` | How we work — 3 short paragraphs |

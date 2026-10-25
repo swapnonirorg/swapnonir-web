@@ -83,39 +83,62 @@
 </nav>`;
 
   const FOOTER = `<footer class="footer">
+
+  <div class="footer-cta">
+    <div class="container">
+      <h2><span class="text-bn">পাশে দাঁড়ান</span><span class="text-en">Stand Beside Us</span></h2>
+      <p><span class="text-bn">প্রতি ১০০ টাকার ৬০ টাকা সরাসরি কাজে যায়।</span><span class="text-en">Of every 100 taka, 60 goes straight to the work.</span></p>
+      <div class="footer-bars">
+        <div class="footer-bar-row">
+          <div class="footer-bar"><span style="width:60%"></span></div>
+          <span class="footer-bar-label">60% <span class="text-bn">কাজে</span><span class="text-en">to work</span></span>
+        </div>
+        <div class="footer-bar-row">
+          <div class="footer-bar"><span style="width:20%"></span></div>
+          <span class="footer-bar-label">20% <span class="text-bn">পরিচালনা</span><span class="text-en">operations</span></span>
+        </div>
+        <div class="footer-bar-row">
+          <div class="footer-bar"><span style="width:20%"></span></div>
+          <span class="footer-bar-label">20% <span class="text-bn">যোগাযোগ</span><span class="text-en">communication</span></span>
+        </div>
+      </div>
+      <div class="footer-cta-btns">
+        <a href="donate.html" class="btn btn-primary"><span class="text-bn">অনুদান দিন</span><span class="text-en">Donate</span></a>
+        <a href="contact.html" class="btn btn-secondary"><span class="text-bn">কথা বলুন</span><span class="text-en">Get in Touch</span></a>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
     <div class="footer-grid">
       <div>
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-          <div style="width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,.18);overflow:hidden;display:flex;align-items:center;justify-content:center"><img src="assets/icons/Shonponir_logo.svg" alt="Swapnonir Logo" style="width:100%;height:100%;object-fit:contain"></div>
-          <span style="color:#fff;font-weight:700;font-size:15px">স্বপ্ননীড় | Swapnonir</span>
+          <div style="width:32px;height:32px;border-radius:6px;background:rgba(245,237,224,.14);overflow:hidden;display:flex;align-items:center;justify-content:center"><img src="assets/icons/Shonponir_logo.svg" alt="Swapnonir Logo" style="width:100%;height:100%;object-fit:contain"></div>
+          <span style="color:#F5EDE0;font-weight:700;font-size:15px">স্বপ্ননীড় | Swapnonir</span>
         </div>
         <p class="footer-tagline"><span class="text-bn">বিপরীতমুখী সমাজের বাস্তবতাকে মেনে নিয়ে নিশ্চিত ভবিষ্যৎ গড়ার প্রত্যয়ে...</span><span class="text-en">Facing the reality of an adverse society, determined to build a secure future...</span></p>
         <a href="https://www.facebook.com/swapnonirorg/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:14px">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           facebook.com/swapnonirorg
         </a>
-        <div class="footer-notice"><span class="text-bn">শুধুমাত্র অনুদান পেজে উল্লিখিত নম্বরে অনুদান পাঠান। স্বপ্ননীড় কখনো ফোনে বা মেসেঞ্জারে টাকা চায় না।</span><span class="text-en">Donate only to the numbers listed on the Donate page. Swapnonir never asks for money over phone or messenger.</span></div>
+        <div class="footer-warning">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F0B9AC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+          <span><span class="text-bn">অনুদান শুধুমাত্র অনুমোদিত নম্বরে দিন। স্বপ্ননীড় কখনো ফোনে বা মেসেঞ্জারে টাকা চায় না।</span><span class="text-en">Donate only to authorized numbers. Swapnonir never asks for money over phone or messenger.</span></span>
+        </div>
       </div>
       <div>
-        <h4><span class="text-bn">পেজসমূহ</span><span class="text-en">Pages</span></h4>
+        <h4><span class="text-bn">পাতাসমূহ</span><span class="text-en">Pages</span></h4>
         <ul class="footer-links">
           <li><a href="index.html"><span class="text-bn">হোম</span><span class="text-en">Home</span></a></li>
-          <li><a href="about.html"><span class="text-bn">আমাদের সম্পর্কে</span><span class="text-en">About Us</span></a></li>
-          <li><a href="journey.html"><span class="text-bn">আমাদের যাত্রা</span><span class="text-en">Our Journey</span></a></li>
-          <li><a href="team.html"><span class="text-bn">আমাদের টিম</span><span class="text-en">Our Team</span></a></li>
-          <li><a href="family-tree.html"><span class="text-bn">বংশ তালিকা</span><span class="text-en">Family Tree</span></a></li>
+          <li><a href="about.html"><span class="text-bn">আমাদের সম্পর্কে</span><span class="text-en">About</span></a></li>
+          <li><a href="journey.html"><span class="text-bn">আমাদের যাত্রা</span><span class="text-en">Journey</span></a></li>
           <li><a href="programs.html"><span class="text-bn">কার্যক্রম</span><span class="text-en">Programs</span></a></li>
-          <li><a href="impact.html"><span class="text-bn">প্রভাব</span><span class="text-en">Impact</span></a></li>
           <li><a href="stories.html"><span class="text-bn">লেখা ও গল্প</span><span class="text-en">Stories</span></a></li>
-        </ul>
-      </div>
-      <div>
-        <h4><span class="text-bn">অংশগ্রহণ</span><span class="text-en">Participation</span></h4>
-        <ul class="footer-links">
-          <li><a href="donate.html"><span class="text-bn">অনুদান দিন</span><span class="text-en">Donate</span></a></li>
-          <li><a href="get-involved.html"><span class="text-bn">স্বেচ্ছাসেবী হন</span><span class="text-en">Volunteer</span></a></li>
-          <li><a href="why-us.html"><span class="text-bn">কেন আমরা</span><span class="text-en">Why Us</span></a></li>
+          <li><a href="team.html"><span class="text-bn">টিম</span><span class="text-en">Team</span></a></li>
+          <li><a href="impact.html"><span class="text-bn">প্রভাব</span><span class="text-en">Impact</span></a></li>
+          <li><a href="get-involved.html"><span class="text-bn">যোগ দিন</span><span class="text-en">Get Involved</span></a></li>
+          <li><a href="notice.html"><span class="text-bn">নোটিশ</span><span class="text-en">Notice</span></a></li>
+          <li><a href="contact.html"><span class="text-bn">যোগাযোগ</span><span class="text-en">Contact</span></a></li>
         </ul>
       </div>
       <div>
@@ -129,12 +152,12 @@
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:4px"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <span><span class="text-bn">শ্রীপুর, দেবীদ্বার, কুমিল্লা - ৩৫১০</span><span class="text-en">Sreepur, Debidwar, Cumilla - 3510, Bangladesh</span></span>
           </li>
-          <li style="margin-top:8px"><a href="contact.html" class="btn btn-ghost btn-sm"><span class="text-bn">বার্তা পাঠান</span><span class="text-en">Send a Message</span></a></li>
+          <li style="margin-top:12px"><a href="contact.html" class="btn btn-primary btn-sm"><span class="text-bn">বার্তা পাঠান</span><span class="text-en">Send a Message</span></a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="fy"></span> স্বপ্ননীড় (Swapnonir). <span class="text-bn">সর্বস্বত্ব সংরক্ষিত।</span><span class="text-en">All rights reserved.</span></span>
+      <span>© <span id="fy"></span> <span class="text-bn">স্বপ্ননীড় (Swapnonir). সর্বস্বত্ব সংরক্ষিত।</span><span class="text-en">Swapnonir. All rights reserved.</span></span>
       <div class="footer-legal">
         <a href="legal.html"><span class="text-bn">গোপনীয়তা নীতি</span><span class="text-en">Privacy</span></a>
         <a href="legal.html"><span class="text-bn">ব্যবহারের শর্ত</span><span class="text-en">Terms</span></a>

@@ -2,11 +2,11 @@
    SWAPNONIR — Humanity & Trust Design System v2
    Exact implementation of the brand spec:
    Coral Clay #E86A58 · Forest Depth #1B4D3E · Alabaster #FBF9F8
-   Newsreader (serif) + Noto Sans (sans, UNICEF-style) + Hind Siliguri (bn)
+   Newsreader (serif) + Helvetica Neue (sans, BRAC-style) + Hind Siliguri (bn)
    8px grid · 1280px container · 120px section-gap
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hind+Siliguri:wght@400;500;600;700&display=swap');
 
 /* ── DESIGN TOKENS ── */
 :root {
@@ -44,9 +44,8 @@
 
   /* Typography */
   --serif:  'Newsreader', Georgia, 'Times New Roman', serif;
-  /* UNICEF-style clean sans: Noto Sans + native system fallbacks for
-     accessibility and performance */
-  --sans:   'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  /* BRAC primary typeface: Helvetica Neue + system fallbacks (no webfont needed) */
+  --sans:   'Helvetica Neue', Helvetica, Arial, sans-serif;
   --bangla: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
 
   /* Spacing (8px base) */
@@ -475,7 +474,7 @@ p   { color: var(--text-2); line-height: 1.7; }
 .body-lg { font-size:20px; line-height:1.6; }
 .body-md { font-size:16px; line-height:1.6; }
 
-/* Label — uppercase Noto Sans (sans) */
+/* Label — uppercase sans (Helvetica Neue, BRAC) */
 .label {
   display: inline-block;
   font-family: var(--sans);
@@ -662,7 +661,7 @@ p   { color: var(--text-2); line-height: 1.7; }
 /* Alternate — forest fill */
 .progress-fill.forest { background: var(--forest); }
 
-/* ── IMPACT STATS — large Newsreader + small Noto Sans (sans) ── */
+/* ── IMPACT STATS — large Newsreader + small sans (Helvetica Neue, BRAC) ── */
 .stat-num {
   font-family: var(--serif);
   font-size: clamp(40px, 7vw, 56px);

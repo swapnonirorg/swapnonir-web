@@ -76,7 +76,7 @@ window.drawPie = function(id, slices){
     ${paths}
     <circle cx="${cx}" cy="${cy}" r="${ri}" fill="var(--bg)"/>
     <text x="${cx}" y="${cy-5}" text-anchor="middle" font-size="11" fill="var(--forest)" font-weight="600" font-family="Newsreader,serif">১,০০০</text>
-    <text x="${cx}" y="${cy+9}" text-anchor="middle" font-size="9" fill="var(--muted)" font-family="Noto Sans,sans-serif">টাকা</text>
+    <text x="${cx}" y="${cy+9}" text-anchor="middle" font-size="9" fill="var(--muted)" font-family="Helvetica Neue,Arial,sans-serif">টাকা</text>
   </svg>`;
 };
 

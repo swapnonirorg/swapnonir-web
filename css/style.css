@@ -1147,28 +1147,65 @@ body.lang-en .hero h1 { font-family: var(--serif); }
 .member-bio   { font-size:13px; color:var(--text-2); margin-top:8px; line-height:1.5; }
 .member-since { font-size:12px; color:var(--outline); margin-top:10px; }
 
-/* ── TIMELINE ── */
-.timeline { position:relative; padding-left:40px; }
-.timeline::before {
-  content:''; position:absolute; left:11px; top:0; bottom:0;
-  width:2px;
-  background:linear-gradient(to bottom, var(--forest), transparent);
+/* ── JOURNEY TIMELINE (editorial "date | description" grid) ── */
+.journey-page { padding: 6rem 0; }
+@media (max-width: 768px) { .journey-page { padding: 3rem 0; } }
+
+.journey-timeline {
+  max-width: 800px;
+  margin: 3rem auto;
 }
-.t-entry  { position:relative; margin-bottom:48px; }
-.t-dot {
-  position:absolute; left:-30px; top:4px;
-  width:18px; height:18px; border-radius:50%;
-  background:var(--coral);
-  border:3px solid var(--surface);
-  box-shadow:0 0 0 3px var(--forest);
+
+.journey-timeline .t-entry {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
 }
-.t-year {
-  font-family:var(--sans); font-size:12px; font-weight:700;
-  letter-spacing:.08em; text-transform:uppercase; color:var(--coral);
-  margin-bottom:6px;
+
+.journey-timeline .t-entry:last-child {
+  border-bottom: none;
 }
-.t-entry h3 { font-size:20px; margin-bottom:10px; }
-.t-entry p  { font-size:15px; }
+
+.journey-timeline .t-year {
+  color: var(--coral);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding-top: 4px;
+}
+
+.journey-timeline .t-content h3 {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--forest);
+  margin-bottom: 0.5rem;
+}
+
+.journey-timeline .t-content p {
+  color: var(--text-2);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.journey-timeline .t-content a {
+  color: var(--forest);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.journey-timeline .t-content a:hover {
+  color: var(--coral);
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 768px) {
+  .journey-timeline .t-entry {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1.25rem 0;
+  }
+}
 
 /* ── FILTER TABS ── */
 .filter-tabs { display:flex; flex-wrap:wrap; gap:8px; }

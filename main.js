@@ -80,31 +80,26 @@ window.drawPie = function(id, slices){
   </svg>`;
 };
 
-/* ── EVENT SLIDERS (programs page) ── */
-window.initSliders=function(){
-  document.querySelectorAll('.ev-slider').forEach(sl=>{
-    const slides=sl.querySelector('.slides');
-    const n=slides.children.length; if(n<1) return;
-    let i=0;
-    const go=k=>{
-      i=(k+n)%n;
-      slides.style.transform=`translateX(-${i*100}%)`;
-      sl.querySelectorAll('.s-dot').forEach((d,di)=>d.classList.toggle('active',di===i));
-    };
-    sl.querySelector('.s-prev').addEventListener('click',()=>go(i-1));
-    sl.querySelector('.s-next').addEventListener('click',()=>go(i+1));
-    const dots=sl.querySelector('.s-dots');
-    if(dots){
-      for(let d=0;d<n;d++){
-        const b=document.createElement('button');
-        b.className='s-dot'+(d===0?' active':'');
-        b.setAttribute('aria-label','ছবি '+(d+1)+' / Image '+(d+1));
-        b.addEventListener('click',()=>go(d));
-        dots.appendChild(b);
-      }
-    }
+/* ── LIGHTBOX (any [data-lightbox] image) ── */
+window.initLightbox=function(){
+  let lb=document.querySelector('.lightbox');
+  if(!lb){
+    lb=document.createElement('div');
+    lb.className='lightbox';
+    lb.innerHTML='<button class="lb-close" type="button" aria-label="বন্ধ করুন / Close">✕</button><img alt="">';
+    document.body.appendChild(lb);
+  }
+  const img=lb.querySelector('img');
+  const open=src=>{ img.src=src; lb.classList.add('active'); };
+  const close=()=>{ lb.classList.remove('active'); img.src=''; };
+  document.querySelectorAll('[data-lightbox]').forEach(el=>{
+    el.addEventListener('click',()=>open(el.getAttribute('data-lightbox')||el.currentSrc||el.src||el.href));
   });
+  lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
+  lb.querySelector('.lb-close').addEventListener('click',close);
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&lb.classList.contains('active')) close(); });
 };
+document.addEventListener('DOMContentLoaded',()=>window.initLightbox());
 
 /* ── DONATE REVEAL + COPY ── */
 document.addEventListener('DOMContentLoaded',()=>{

@@ -13,7 +13,10 @@
 | `about.html` | Founded 2013, what we do, who runs it |
 | `journey.html` | Real history — dated milestones from newspaper record |
 | `notice.html` | Notice Board — expandable sections (revamp 2026, flood appeal 2024, past relief) |
-| `programs.html` | Relief, winter clothes, education & community |
+| `programs.html` | Relief, winter clothes, education & community — with event image sliders and newspaper clippings |
+| `events/` | Field photos used by the programs page sliders |
+| `paper_cutting/` | Newspaper clippings shown on the programs page |
+| `icon/` | Logo assets (SVG in the navbar, PNG/SVG favicon) |
 | `impact.html` | Dated record of documented work + financial pie chart |
 | `stories.html` | Two real excerpts — the flood appeal, the dropout boy |
 | `team.html` | Tabs: 19-member executive committee + advisory council |

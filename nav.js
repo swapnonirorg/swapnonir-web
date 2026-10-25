@@ -30,7 +30,7 @@
   const NAV = `<nav class="navbar" aria-label="Main navigation">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-mark">স্ব</div>
+      <div class="nav-logo-mark"><img src="icon/Shonponir_logo.svg" alt="Swapnonir Logo" style="width:100%;height:100%;object-fit:contain;border-radius:var(--r-md);"></div>
       <div class="nav-logo-text">
         <span>স্বপ্ননীড়</span><span>Swapnonir</span>
       </div>
@@ -85,7 +85,7 @@
     <div class="footer-grid">
       <div>
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-          <div style="width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-family:var(--bangla);font-weight:700;color:#fff;font-size:13px">স্ব</div>
+          <div style="width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,.18);overflow:hidden;display:flex;align-items:center;justify-content:center"><img src="icon/Shonponir_logo.svg" alt="Swapnonir Logo" style="width:100%;height:100%;object-fit:contain"></div>
           <span style="color:#fff;font-weight:700;font-size:15px">স্বপ্ননীড় | Swapnonir</span>
         </div>
         <p class="footer-tagline"><span class="text-bn">বিপরীতমুখী সমাজের বাস্তবতাকে মেনে নিয়ে নিশ্চিত ভবিষ্যৎ গড়ার প্রত্যয়ে...</span><span class="text-en">Facing the reality of an adverse society, determined to build a secure future...</span></p>

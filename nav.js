@@ -44,6 +44,7 @@
       <li><a href="stories.html"><span class="text-bn">গল্প</span><span class="text-en">Stories</span></a></li>
       <li><a href="team.html"><span class="text-bn">টিম</span><span class="text-en">Team</span></a></li>
       <li><a href="get-involved.html"><span class="text-bn">যোগ দিন</span><span class="text-en">Get Involved</span></a></li>
+      <li><a href="notice.html"><span class="text-bn">নোটিশ</span><span class="text-en">Notice</span></a></li>
       <li><a href="contact.html"><span class="text-bn">যোগাযোগ</span><span class="text-en">Contact</span></a></li>
     </ul>
     <div class="nav-actions">
@@ -70,6 +71,7 @@
       <li><a href="team.html"><span class="text-bn">টিম</span><span class="text-en">Team</span></a></li>
       <li><a href="get-involved.html"><span class="text-bn">যোগ দিন</span><span class="text-en">Get Involved</span></a></li>
       <li><a href="why-us.html"><span class="text-bn">কেন আমরা</span><span class="text-en">Why Us</span></a></li>
+      <li><a href="notice.html"><span class="text-bn">নোটিশ বোর্ড</span><span class="text-en">Notice Board</span></a></li>
       <li><a href="contact.html"><span class="text-bn">যোগাযোগ</span><span class="text-en">Contact</span></a></li>
     </ul>
     <div class="mobile-actions">

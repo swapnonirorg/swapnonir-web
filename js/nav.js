@@ -174,6 +174,22 @@
       if(a.getAttribute('href')===page) a.classList.add('active');
     });
 
+    // Form i18n: <option> elements cannot contain hidden/shown spans (browsers
+    // render their text concatenated), so bilingual selects carry data-bn /
+    // data-en instead, and inputs can carry data-bn-placeholder /
+    // data-en-placeholder. This fills in the right language's text.
+    function applyFormI18n(){
+      const en = document.body.classList.contains('lang-en');
+      document.querySelectorAll('option[data-bn], option[data-en]').forEach(o=>{
+        const t = en ? o.dataset.en : o.dataset.bn;
+        if(t) o.textContent = t;
+      });
+      document.querySelectorAll('[data-bn-placeholder],[data-en-placeholder]').forEach(el=>{
+        const p = en ? (el.dataset.enPlaceholder || '') : (el.dataset.bnPlaceholder || '');
+        if(p) el.setAttribute('placeholder', p);
+      });
+    }
+
     // Language toggle (two-button pill)
     function setLang(lang){
       const en = lang === 'en';
@@ -186,6 +202,7 @@
         b.classList.toggle('active', active);
         b.setAttribute('aria-pressed', active);
       });
+      applyFormI18n();
     }
     document.querySelectorAll('.lang-btn').forEach(b=>{
       b.addEventListener('click',()=>setLang(b.dataset.lang));

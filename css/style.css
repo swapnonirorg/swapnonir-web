@@ -1250,14 +1250,10 @@ body.lang-en .hero h1 { font-family: var(--serif); }
 
 /* ── HERITAGE HERO ── */
 .heritage-hero {
-  background:#2C1A12;
-  padding:80px 0;
-  position:relative;
-  overflow:hidden;
-}
-.heritage-hero .bg-pattern {
-  position:absolute; inset:0; opacity:.12;
-  background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4a96a'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+  background: #1a1a1a; /* Solid dark, no pattern */
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
 }
 .heritage-hero .hh-inner { position:relative; z-index:1; max-width:600px; }
 .heritage-eyebrow { color:rgba(212,169,106,.85); font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px; }

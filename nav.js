@@ -1,4 +1,4 @@
-/* nav.js — injects navbar + footer; dark mode, Bangla/English toggle, mobile menu */
+/* nav.js — injects notice bar + navbar + footer; dark mode, Bangla/English toggle, mobile menu */
 (function(){
   // Language: pages carry <body class="lang-bn"> by default; swap early if saved
   if(localStorage.getItem('swapnonir-lang')==='en'){
@@ -6,6 +6,25 @@
     document.body.classList.add('lang-en');
     document.documentElement.lang='en';
   }
+
+  // Dismissible top notice — stays hidden once dismissed for this notice id
+  const NOTICE_ID = 'flood-2024-08';
+  const noticeDismissed = localStorage.getItem('swapnonir-notice') === NOTICE_ID;
+  const NOTICE = `
+<div id="site-notice" role="region" aria-label="নোটিশ / Notice" style="background:var(--coral);color:#fff">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px">
+    <p style="font-size:14px;line-height:1.5;color:#fff">
+      <span class="text-bn">স্মরণকালের ভয়াবহ বন্যায় কুমিল্লা, ফেনী, নোয়াখালি প্লাবিত। পাশে দাঁড়ান।</span>
+      <span class="text-en">Devastating floods hit Cumilla, Feni, Noakhali. Stand beside them.</span>
+    </p>
+    <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+      <a href="notice.html" style="font-size:13px;font-weight:700;color:#fff;text-decoration:underline;text-underline-offset:3px"><span class="text-bn">বিস্তারিত</span><span class="text-en">Details</span></a>
+      <button id="notice-dismiss" aria-label="বন্ধ করুন / Close notice" style="width:28px;height:28px;border:none;background:transparent;cursor:pointer;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</div>`;
 
   const NAV = `<nav class="navbar" aria-label="Main navigation">
   <div class="container nav-inner">
@@ -22,8 +41,7 @@
       <li><a href="programs.html"><span class="text-bn">কার্যক্রম</span><span class="text-en">Programs</span></a></li>
       <li><a href="impact.html"><span class="text-bn">প্রভাব</span><span class="text-en">Impact</span></a></li>
       <li><a href="stories.html"><span class="text-bn">গল্প</span><span class="text-en">Stories</span></a></li>
-      <li><a href="team.html"><span class="text-bn">দল</span><span class="text-en">Team</span></a></li>
-      <li><a href="members.html"><span class="text-bn">সদস্য</span><span class="text-en">Members</span></a></li>
+      <li><a href="team.html"><span class="text-bn">টিম</span><span class="text-en">Team</span></a></li>
       <li><a href="revamp.html"><span class="text-bn">রিভ্যাম্প</span><span class="text-en">Revamp</span></a></li>
       <li><a href="get-involved.html"><span class="text-bn">যোগ দিন</span><span class="text-en">Get Involved</span></a></li>
       <li><a href="contact.html"><span class="text-bn">যোগাযোগ</span><span class="text-en">Contact</span></a></li>
@@ -49,8 +67,7 @@
       <li><a href="programs.html"><span class="text-bn">কার্যক্রম</span><span class="text-en">Programs</span></a></li>
       <li><a href="impact.html"><span class="text-bn">প্রভাব</span><span class="text-en">Impact</span></a></li>
       <li><a href="stories.html"><span class="text-bn">লেখা ও গল্প</span><span class="text-en">Stories</span></a></li>
-      <li><a href="team.html"><span class="text-bn">দল</span><span class="text-en">Team</span></a></li>
-      <li><a href="members.html"><span class="text-bn">সদস্যরা</span><span class="text-en">Members</span></a></li>
+      <li><a href="team.html"><span class="text-bn">টিম</span><span class="text-en">Team</span></a></li>
       <li><a href="advisors.html"><span class="text-bn">উপদেষ্টা পরিষদ</span><span class="text-en">Advisors</span></a></li>
       <li><a href="revamp.html"><span class="text-bn">রিভ্যাম্প সভা ২০২৬</span><span class="text-en">Revamp Meeting 2026</span></a></li>
       <li><a href="get-involved.html"><span class="text-bn">যোগ দিন</span><span class="text-en">Get Involved</span></a></li>
@@ -84,6 +101,7 @@
           <li><a href="index.html"><span class="text-bn">হোম</span><span class="text-en">Home</span></a></li>
           <li><a href="about.html"><span class="text-bn">আমাদের সম্পর্কে</span><span class="text-en">About Us</span></a></li>
           <li><a href="journey.html"><span class="text-bn">আমাদের যাত্রা</span><span class="text-en">Our Journey</span></a></li>
+          <li><a href="team.html"><span class="text-bn">আমাদের টিম</span><span class="text-en">Our Team</span></a></li>
           <li><a href="programs.html"><span class="text-bn">কার্যক্রম</span><span class="text-en">Programs</span></a></li>
           <li><a href="impact.html"><span class="text-bn">প্রভাব</span><span class="text-en">Impact</span></a></li>
           <li><a href="stories.html"><span class="text-bn">লেখা ও গল্প</span><span class="text-en">Stories</span></a></li>
@@ -94,7 +112,6 @@
         <ul class="footer-links">
           <li><a href="donate.html"><span class="text-bn">অনুদান দিন</span><span class="text-en">Donate</span></a></li>
           <li><a href="get-involved.html"><span class="text-bn">স্বেচ্ছাসেবী হন</span><span class="text-en">Volunteer</span></a></li>
-          <li><a href="members.html"><span class="text-bn">সদস্যরা</span><span class="text-en">Members</span></a></li>
           <li><a href="advisors.html"><span class="text-bn">উপদেষ্টা পরিষদ</span><span class="text-en">Advisors</span></a></li>
           <li><a href="revamp.html"><span class="text-bn">রিভ্যাম্প সভা ২০২৬</span><span class="text-en">Revamp 2026</span></a></li>
           <li><a href="why-us.html"><span class="text-bn">কেন আমরা</span><span class="text-en">Why Us</span></a></li>
@@ -132,11 +149,18 @@
   if(localStorage.getItem('swapnonir-theme')==='dark') document.documentElement.classList.add('dark');
 
   document.addEventListener('DOMContentLoaded',()=>{
-    // Inject
+    // Inject — notice bar (if not dismissed) sits directly above the navbar
     document.body.insertAdjacentHTML('afterbegin', NAV);
+    if(!noticeDismissed) document.body.insertAdjacentHTML('afterbegin', NOTICE);
     document.body.insertAdjacentHTML('beforeend', FOOTER);
     document.getElementById('fy').textContent = new Date().getFullYear();
     document.getElementById('nav-donate').style.display='inline-flex';
+
+    // Notice dismissal (persisted per notice id)
+    document.getElementById('notice-dismiss')?.addEventListener('click',()=>{
+      localStorage.setItem('swapnonir-notice', NOTICE_ID);
+      document.getElementById('site-notice')?.remove();
+    });
 
     // Active link
     const page = location.pathname.split('/').pop()||'index.html';

@@ -12,11 +12,11 @@
 | `donate.html` | Full donation flow — reveal, copy, TxID form |
 | `about.html` | Founded 2013, what we do, who runs it |
 | `journey.html` | Real history — dated milestones from newspaper record |
+| `notice.html` | August 26, 2024 flood appeal — Cumilla, Feni, Noakhali |
 | `programs.html` | Relief, winter clothes, education & community |
 | `impact.html` | Dated record of documented work + financial pie chart |
 | `stories.html` | Two real excerpts — the flood appeal, the dropout boy |
-| `team.html` | The team, in brief |
-| `members.html` | Member directory with filter + search |
+| `team.html` | The 19-member executive committee (BN/EN names & roles) |
 | `advisors.html` | Advisory council (being formed) |
 | `revamp.html` | Revamp meeting, March 23, 2026 — eleven decisions |
 | `get-involved.html` | Volunteer application form |
@@ -42,14 +42,10 @@ fields, Bangladeshi phone `01XXXXXXXXX`, TxID patterns per bKash/Nagad, a
 `_gotcha` honeypot) and appends accepted submissions to `data/submissions.json`
 (never committed — see `.gitignore`).
 
-## Before going live — replace these in main.js
-```js
-const CFG = {
-  bkash: '01XXXXXXXXX',   // ← real bKash number
-  nagad: '01XXXXXXXXX',   // ← real Nagad number
-  wa:    '880XXXXXXXXXX', // ← WhatsApp with country code
-};
-```
+## Payment numbers
+`main.js` carries the live bKash/Nagad/WhatsApp numbers; the August 2024
+flood appeal numbers (including the bKash numbers of বাহার, মামুন and
+শিপন) are listed on `notice.html`.
 
 ## Deploy
 Note: the Node server in `server.js` is dev-only; the static HTML still deploys

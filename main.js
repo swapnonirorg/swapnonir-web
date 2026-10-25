@@ -2,11 +2,11 @@
    SWAPNONIR — main.js
    ============================================================ */
 
-/* ── CONFIG — replace payment numbers before going live ── */
+/* ── CONFIG ── */
 const CFG = {
-  bkash:      '01XXXXXXXXX',   // ← real bKash number
-  nagad:      '01XXXXXXXXX',   // ← real Nagad number
-  wa:         '880XXXXXXXXXX', // ← WhatsApp with country code
+  bkash:      '01515610661',    // bKash (বাহার / Bahar)
+  nagad:      '01515610661',    // Nagad
+  wa:         '8801515610661',  // WhatsApp with country code
   api_donate: '/api/donate',   // local endpoints, handled by server.js
   api_vol:    '/api/volunteer',
   api_con:    '/api/contact',
@@ -193,41 +193,5 @@ window.initConForm=()=>{
   if(wa) wa.href=`https://wa.me/${CFG.wa}`;
 };
 
-/* ── MEMBER FILTER + SEARCH ── */
-window.initMembers=function(members){
-  const grid=document.getElementById('member-grid');
-  const search=document.getElementById('m-search');
-  const tabs=document.querySelectorAll('[data-filter]');
-  const cnt=document.getElementById('m-count');
-  let filt='all', q='';
-
-  function render(){
-    let list=members.filter(m=>{
-      const mf=filt==='all'||m.status===filt;
-      const mq=!q||m.name_bn.toLowerCase().includes(q)||m.name_en.toLowerCase().includes(q);
-      return mf&&mq;
-    }).sort((a,b)=>a.sort_order-b.sort_order);
-    if(cnt) cnt.textContent=`মোট ${list.length} জন সদস্য`;
-    grid.innerHTML=list.length?list.map(m=>{
-      const init=m.name_en.trim().split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();
-      return `<div class="card" style="text-align:center;padding:24px">
-        <div class="member-avatar">${m.photo?`<img src="${m.photo}" alt="${m.name_en} at Swapnonir">`:`<span>${init}</span>`}</div>
-        <div class="member-name bangla">${m.name_bn}</div>
-        <div class="member-role">${m.role_bn}</div>
-        ${m.bio_bn?`<div class="member-bio">${m.bio_bn}</div>`:''}
-        ${m.member_since?`<div class="member-since">সদস্য ${m.member_since} থেকে</div>`:''}
-        ${m.facebook?`<div style="margin-top:8px"><a href="${m.facebook}" target="_blank" rel="noopener" aria-label="${m.name_en} on Facebook" style="color:var(--muted)"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div>`:''}
-      </div>`;
-    }).join(''):`<p style="grid-column:1/-1;text-align:center;color:var(--muted);padding:48px">কোনো সদস্য পাওয়া যায়নি।</p>`;
-  }
-
-  tabs.forEach(t=>t.addEventListener('click',()=>{
-    tabs.forEach(x=>{ x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
-    t.classList.add('active'); t.setAttribute('aria-selected','true');
-    filt=t.dataset.filter; render();
-  }));
-
-  let dbt;
-  search?.addEventListener('input',e=>{ clearTimeout(dbt); dbt=setTimeout(()=>{ q=e.target.value.toLowerCase(); render(); },200); });
-  render();
-};
+/* ── MEMBER FILTER + SEARCH ──
+   (retired — the members directory merged into team.html) */

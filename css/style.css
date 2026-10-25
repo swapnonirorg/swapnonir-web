@@ -859,10 +859,8 @@ body.lang-en .hero h1 { font-family: var(--serif); }
 }
 .collage-card {
   position: absolute;
+  overflow: hidden;
   border-radius: var(--r-lg);
-  padding: 20px;
-  display: flex;
-  align-items: flex-end;
   color: #fff;
   font-family: var(--bangla);
   font-size: 14px;
@@ -870,12 +868,26 @@ body.lang-en .hero h1 { font-family: var(--serif); }
   box-shadow: 0 10px 28px rgba(0,0,0,.3);
 }
 body.lang-en .collage-card { font-family: var(--serif); }
+.collage-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.collage-card figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 28px 14px 10px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+}
 .collage-card.c1 {
   width: 62%;
   height: 230px;
   top: 0;
   left: 4%;
-  background: #C1553B;
   transform: rotate(-2deg);
 }
 .collage-card.c2 {
@@ -883,7 +895,6 @@ body.lang-en .collage-card { font-family: var(--serif); }
   height: 190px;
   bottom: 40px;
   right: 0;
-  background: #4A6741;
   transform: rotate(1.5deg);
 }
 .collage-card.c3 {
@@ -891,11 +902,8 @@ body.lang-en .collage-card { font-family: var(--serif); }
   height: 120px;
   bottom: 0;
   left: 0;
-  background: #B98A2F;
   transform: rotate(3deg);
 }
-.collage-card figcaption,
-.collage-card > span { opacity: .92; }
 @media(max-width:899px) {
   .hero-content { grid-template-columns: 1fr; gap: 40px; }
   .hero-collage { min-height: 320px; max-width: 480px; }

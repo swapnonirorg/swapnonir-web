@@ -5,9 +5,9 @@
 | File | Purpose |
 |------|---------|
 | `server.js` | Local server: static files + form API (`/api/donate`, `/api/volunteer`, `/api/contact`) |
-| `style.css` | ALL styling: design tokens, components, layouts |
-| `main.js` | ALL logic: counters, forms, pie chart, member filter |
-| `nav.js` | Injects navbar + footer; dark mode; Bangla/English toggle (`বাং / EN`) |
+| `css/style.css` | ALL styling: design tokens, components, layouts |
+| `js/main.js` | ALL logic: counters, forms, sliders, lightbox |
+| `js/nav.js` | Injects notice bar + navbar + footer; dark mode; Bangla/English toggle |
 | `index.html` | Home: hero, prose, program list, pull-quote, donate strip |
 | `donate.html` | Full donation flow: reveal, copy, TxID form |
 | `about.html` | Founded 2013, what we do, who runs it |
@@ -27,7 +27,7 @@
 
 Bangla is the default language. The `বাং / EN` button in the navbar toggles
 Bangla/English (persisted in `localStorage`, driven by `.text-bn`/`.text-en`
-spans and `body.lang-bn`/`body.lang-en` classes in `style.css`).
+spans and `body.lang-bn`/`body.lang-en` classes in `css/style.css`).
 
 ## Run locally
 ```bash
@@ -43,14 +43,14 @@ fields, Bangladeshi phone `01XXXXXXXXX`, TxID patterns per bKash/Nagad, a
 (never committed, see `.gitignore`).
 
 ## Payment numbers
-`main.js` carries the live bKash/Nagad/WhatsApp numbers; the August 2024
+`js/main.js` carries the live bKash/Nagad/WhatsApp numbers; the August 2024
 flood appeal numbers (including the bKash numbers of বাহার, মামুন and
 শিপন) are listed on `notice.html`.
 
 ## Deploy
 Note: the Node server in `server.js` is dev-only; the static HTML still deploys
 unchanged to Vercel/GitHub Pages, but the forms will 404 there until you wire a
-serverless handler or Formspree back in (`main.js` `CFG` endpoints).
+serverless handler or Formspree back in (`js/main.js` `CFG` endpoints).
 
 ### Deploy to Vercel (free)
 1. Push folder to GitHub

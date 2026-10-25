@@ -1,5 +1,5 @@
 /* ============================================================
-   SWAPNONIR — main.js
+   SWAPNONIR (main.js)
    ============================================================ */
 
 /* ── CONFIG ── */
@@ -209,7 +209,7 @@ async function sendForm(formId, endpoint, successId, errorId){
       form.closest('[data-form-wrap]').querySelector('#'+successId).hidden=false;
       form.style.display='none';
     } else if(res.status===400&&data&&data.errors){
-      // server-side validation — mirror errors onto the inline field messages
+      // server-side validation, mirror errors onto the inline field messages
       Object.entries(data.errors).forEach(([name,msg])=>showFieldError(form,name,msg));
       sub.disabled=false; sub.textContent=orig;
     } else throw new Error();
@@ -241,4 +241,4 @@ window.initConForm=()=>{
 };
 
 /* ── MEMBER FILTER + SEARCH ──
-   (retired — the members directory merged into team.html) */
+   (retired: the members directory merged into team.html) */

@@ -1,5 +1,5 @@
 /* ============================================================
-   SWAPNONIR — server.js
+   SWAPNONIR (server.js)
    Dev server: static files + local form API. No dependencies.
    Standard library only: http, fs, path, url, crypto.
    Run: node server.js  →  http://localhost:3000

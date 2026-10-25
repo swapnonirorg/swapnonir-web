@@ -1,4 +1,4 @@
-/* nav.js — injects notice bar + navbar + footer; dark mode, Bangla/English toggle, mobile menu */
+/* nav.js: injects notice bar + navbar + footer; dark mode, Bangla/English toggle, mobile menu */
 (function(){
   // Language: pages carry <body class="lang-bn"> by default; swap early if saved.
   // Body must always end up with exactly one lang class so only one of
@@ -11,7 +11,7 @@
     document.documentElement.lang = en ? 'en' : 'bn';
   })();
 
-  // Dismissible top notice — stays hidden once dismissed for this notice id
+  // Dismissible top notice, stays hidden once dismissed for this notice id
   const NOTICE_ID = 'notice-board';
   const noticeDismissed = localStorage.getItem('swapnonir-notice') === NOTICE_ID;
   const NOTICE = `
@@ -150,7 +150,7 @@
   if(localStorage.getItem('swapnonir-theme')==='dark') document.documentElement.classList.add('dark');
 
   document.addEventListener('DOMContentLoaded',()=>{
-    // Inject — notice bar (if not dismissed) sits directly above the navbar
+    // Inject: notice bar (if not dismissed) sits directly above the navbar
     document.body.insertAdjacentHTML('afterbegin', NAV);
     if(!noticeDismissed) document.body.insertAdjacentHTML('afterbegin', NOTICE);
     document.body.insertAdjacentHTML('beforeend', FOOTER);

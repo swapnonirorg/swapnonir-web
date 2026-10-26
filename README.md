@@ -1,74 +1,125 @@
-# স্বপ্ননীড় | Swapnonir Website
-**Plain HTML + CSS + JS frontend · tiny zero-dependency Node server for forms**
+# Swapnonir (স্বপ্ননীড়)
 
-## Files
-| File | Purpose |
-|------|---------|
-| `server.js` | Local server: static files + form API (`/api/donate`, `/api/volunteer`, `/api/contact`) |
-| `css/style.css` | ALL styling: design tokens, components, layouts |
-| `js/main.js` | ALL logic: counters, forms, sliders, lightbox |
-| `js/nav.js` | Injects notice bar + navbar + footer; dark mode; Bangla/English toggle |
-| `index.html` | Home: hero, prose, program list, pull-quote, donate strip |
-| `donate.html` | Full donation flow: reveal, copy, TxID form |
-| `about.html` | Founded 2013, what we do, who runs it |
-| `journey.html` | Real history, dated milestones from newspaper record |
-| `notice.html` | Notice Board: expandable sections (revamp 2026, flood appeal 2024, past relief) |
-| `programs.html` | Relief, winter clothes, education & community, clickable images with lightbox, newspaper clippings below |
-| `assets/` | All images: event photos, newspaper clippings, logo (SVG in navbar, SVG/PNG favicon) |
-| `impact.html` | Dated record of documented work + financial pie chart |
-| `stories.html` | Two real excerpts: the flood appeal, the dropout boy |
-| `team.html` | Tabs: 19-member executive committee + advisory council |
-| `family-tree.html` | Khan family tree: 7 generations, bilingual nodes, scrollable |
-| `get-involved.html` | Volunteer application form |
-| `contact.html` | Contact form + details |
-| `why-us.html` | How we work: 3 short paragraphs |
-| `legal.html` | Privacy, terms, official notice |
-| `404.html` | Not found page |
+A grassroots, volunteer-driven social organisation based in Sreepur, Debidwar, Cumilla, Bangladesh — serving the community since 2013.
 
-Bangla is the default language. The `বাং / EN` button in the navbar toggles
-Bangla/English (persisted in `localStorage`, driven by `.text-bn`/`.text-en`
-spans and `body.lang-bn`/`body.lang-en` classes in `css/style.css`).
+This repository contains the public-facing website for Swapnonir, built entirely with **zero external dependencies**: no npm packages, no React, no Tailwind, no external CSS frameworks. Just native web standards and a lightweight Node.js backend.
 
-## Run locally
-```bash
-node server.js
-# → swapnonir running on http://localhost:3000
+---
+
+## 🏠 About the Organisation
+
+| Attribute | Details |
+|-----------|---------|
+| **Name** | Swapnonir (স্বপ্ননীড়) |
+| **Location** | Sreepur, Debidwar, Cumilla - 3510, Bangladesh |
+| **Founded** | 2013 |
+| **Structure** | 19-member Executive Committee |
+| **Mission** | A grassroots, volunteer-driven social organisation facing the reality of an adverse society, determined to build a secure future (বিপরীতমুখী সমাজের বাস্তবতাকে মেনে নিয়ে নিশ্চিত ভবিষ্যৎ গড়ার প্রত্যয়ে). The organisation avoids corporate jargon and focuses on quiet, documented action. |
+
+### Timeline
+
+| Year | Milestone |
+|------|-----------|
+| 2013 | Organisation founded |
+| 2015 | Winter clothes distribution |
+| 2016 | Jamalpur flood relief |
+| 2020 | COVID-19 food support |
+| 2022 | Sylhet floods relief |
+| 2024 | Cumilla / Feni / Noakhali floods relief |
+| 2026 | Revamp meeting |
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+| Layer | Technology | Notes |
+|-------|-----------|-------|
+| Markup | HTML5 | Semantic markup |
+| Styling | CSS3 | Custom "Humanity & Trust" Design System. No Tailwind, no Bootstrap. |
+| Design Features | CSS variables | Dark Mode, mobile-first responsive design |
+| Typography | Newsreader (Serif), Helvetica Neue (Sans-serif), Hind Siliguri (Bangla) | — |
+| Colors | Forest Green (#1B4D3E), Coral Clay (#E86A58), Alabaster (#FFF8F6) | — |
+| Scripting | Vanilla JavaScript (ES6+) | No libraries. Custom bilingual toggle (.text-bn/.text-en), form validation, native lightbox. |
+
+### Backend
+
+| Layer | Technology | Notes |
+|-------|-----------|-------|
+| Runtime | Node.js | Standard Library only: `http`, `fs`, `path`, `url`, `crypto` |
+| Dependencies | **Zero** | No `npm install`, no `package.json` dependencies |
+| Server | `server.js` | Custom Node.js HTTP server |
+| API Endpoints | `/api/donate`, `/api/volunteer`, `/api/contact` | Form submission handlers |
+| Data Storage | `data/submissions.json` | Validated submissions saved locally (gitignored) |
+
+### Key Features
+
+- **Bilingual (Bangla / English)** — content toggles via `.text-bn` / `.text-en` classes
+- **Transparent Impact page** — documented milestones and relief activities
+- **Fraud Protection warnings** — explicit donor guidance on the site
+- **Accessibility** — ARIA attributes and keyboard navigable
+
+---
+
+## 📁 Project Structure
+
 ```
-Open http://localhost:3000. `PORT=… node server.js` overrides the port; the
-server binds to 127.0.0.1 by default.
+swapnonir-web/
+├── css/
+│   └── style.css          # All styling and design tokens
+├── js/
+│   ├── main.js            # Core client-side logic
+│   └── nav.js             # Navigation, language toggle, and shared UI logic
+├── server.js              # Node.js backend server (standard library only)
+├── assets/                # Images and logos
+├── *.html                 # Individual pages (index, about, journey, etc.)
+└── data/                  # Local JSON storage for form submissions (gitignored)
+```
 
-The three forms POST JSON to the local API. The server validates (required
-fields, Bangladeshi phone `01XXXXXXXXX`, TxID patterns per bKash/Nagad, a
-`_gotcha` honeypot) and appends accepted submissions to `data/submissions.json`
-(never committed, see `.gitignore`).
+---
 
-## Payment numbers
-`js/main.js` carries the live bKash/Nagad/WhatsApp numbers; the August 2024
-flood appeal numbers (including the bKash numbers of বাহার, মামুন and
-শিপন) are listed on `notice.html`.
+## 🚀 How to Run Locally
 
-## Deploy
-Note: the Node server in `server.js` is dev-only; the static HTML still deploys
-unchanged to Vercel/GitHub Pages, but the forms will 404 there until you wire a
-serverless handler or Formspree back in (`js/main.js` `CFG` endpoints).
+**Requirements:**
+- Node.js installed on your system
 
-### Deploy to Vercel (free)
-1. Push folder to GitHub
-2. vercel.com → New Project → Import repo
-3. Framework: **Other** (static)
-4. Done, HTTPS auto-configured
+**Steps:**
 
-### Deploy to GitHub Pages (also free)
-1. Push to GitHub repo
-2. Settings → Pages → Source: main branch / root
-3. Site live at `username.github.io/repo-name`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/taskifbin/swapnonir-web.git
+   cd swapnonir-web
+   ```
 
-## Design System (Humanity & Trust)
-| Token | Value | Use |
-|-------|-------|-----|
-| `--coral` | `#E86A58` | Primary CTA only (Donate, Join) |
-| `--forest` | `#1B4D3E` | Headlines, trust indicators |
-| `--bg` | `#FFF8F6` | Page background (Alabaster) |
-| `--sans` | Public Sans | Body, buttons, labels |
-| `--serif` | Newsreader | All headings, impact numbers |
-| `--bangla` | Hind Siliguri | All Bangla text |
+2. Start the server:
+   ```bash
+   node server.js
+   ```
+
+   No `npm install` is required — there are no external dependencies.
+
+3. Open your browser and navigate to:
+   ```
+   http://localhost:3000
+   ```
+
+The site will be served locally at `http://localhost:3000` with no build step needed.
+
+---
+
+## 🤝 Contributing
+
+This project intentionally avoids external frameworks to keep the codebase lightweight, auditable, and dependency-free. When contributing:
+
+- Do not add npm packages, React, Vue, Tailwind, Bootstrap, or other frontend/backend frameworks.
+- Use semantic HTML5, vanilla CSS3 with custom properties, and vanilla JavaScript (ES6+).
+- Keep the backend reliant only on Node.js standard library modules.
+- Maintain bilingual parity between Bangla (`.text-bn`) and English (`.text-en`) content.
+
+---
+
+## 📄 License
+
+This project is maintained by Swapnonir (স্বপ্ননীড়).
+```

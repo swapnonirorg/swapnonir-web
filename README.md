@@ -118,8 +118,13 @@ This project intentionally avoids external frameworks to keep the codebase light
 - Maintain bilingual parity between Bangla (`.text-bn`) and English (`.text-en`) content.
 
 ---
-
 ## 📄 License
 
-This project is maintained by Swapnonir (স্বপ্ননীড়).
+This project is maintained by **Swapnonir (স্বপ্ননীড়)**.
+
+We use a dual-license model to protect both our open-source code and our community stories:
+*   **Software & Code** (HTML, CSS, JS, Node.js) is licensed under the **MIT License**.
+*   **Content & Media** (Photos, text, stories, logos) is licensed under **CC BY-NC-SA 4.0**.
+
+See the full [LICENSE](LICENSE) file for complete details.
 ```

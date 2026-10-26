@@ -950,7 +950,6 @@ p   { color: var(--text-2); line-height: 1.7; }
 }
 @media(max-width:768px) {
   .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .hero-image-collage { order: -1; }
   .hero-content { text-align: center; }
   .hero-title-row { justify-content: center; }
   .hero-ctas { justify-content: center; }

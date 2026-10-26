@@ -291,6 +291,7 @@
                         name="name"
                         required
                         data-err-required="নাম লিখুন"
+                        data-err-required-en="Enter your name"
                         autocomplete="name" /><span
                         class="form-error"
                         aria-live="polite"></span>
@@ -306,7 +307,8 @@
                         required
                         inputmode="tel"
                         data-phone
-                        data-err-required="নম্বর দিন" /><span
+                        data-err-required="নম্বর দিন"
+                        data-err-required-en="Enter number" /><span
                         class="form-error"
                         aria-live="polite"></span>
                     </div>
@@ -320,7 +322,8 @@
                         name="amount"
                         required
                         inputmode="numeric"
-                        data-err-required="পরিমাণ দিন" /><span
+                        data-err-required="পরিমাণ দিন"
+                        data-err-required-en="Enter amount" /><span
                         class="form-error"
                         aria-live="polite"></span>
                     </div>
@@ -333,11 +336,9 @@
                         id="dc"
                         name="channel"
                         required
-                        data-err-required="মাধ্যম বেছে নিন">
-                        <option value="">
-                          <span class="text-bn">বেছে নিন</span
-                          ><span class="text-en">Choose</span>
-                        </option>
+                        data-err-required="মাধ্যম বেছে নিন"
+                        data-err-required-en="Choose channel">
+                        <option value="" data-bn="বেছে নিন" data-en="Choose"></option>
                         <option value="bkash">bKash</option>
                         <option value="nagad">Nagad</option></select
                       ><span class="form-error" aria-live="polite"></span>
@@ -356,7 +357,10 @@
                       required
                       data-txid
                       data-err-required="TxID দিন"
-                      placeholder="e.g. ABC1234XY" /><span
+                      data-err-required-en="Enter TxID"
+                      placeholder="e.g. ABC1234XY"
+                      data-bn-placeholder="যেমন: ABC1234XY"
+                      data-en-placeholder="e.g. ABC1234XY" /><span
                       class="form-error"
                       aria-live="polite"></span>
                   </div>

@@ -172,7 +172,9 @@ async function sendForm(formId, endpoint, successId, errorId){
     if(err) err.textContent='';
     if(!f.value.trim()){
       ok=false; f.classList.add('error');
-      if(err) err.textContent=f.dataset.errRequired||'এই তথ্যটি প্রয়োজন।';
+      const isEn = document.body.classList.contains('lang-en');
+      const msg = isEn ? (f.dataset.errRequiredEn || 'This field is required.') : (f.dataset.errRequired || 'এই তথ্যটি প্রয়োজন।');
+      if(err) err.textContent=msg;
     }
   });
   // BD phone

@@ -511,7 +511,7 @@ p   { color: var(--text-2); line-height: 1.7; }
 .grid-2 { display:grid; gap:24px; grid-template-columns:1fr; }
 .grid-3 { display:grid; gap:24px; grid-template-columns:1fr; }
 .grid-4 { display:grid; gap:20px; grid-template-columns:1fr; }
-.grid-lg-2 { display:grid; gap:48px; grid-template-columns:1fr; align-items:start; }
+.grid-lg-2 { display: grid; gap: 48px; grid-template-columns: 1fr 1fr; align-items: start; }
 
 @media(min-width:600px) {
   .grid-2 { grid-template-columns:repeat(2,1fr); }
@@ -520,6 +520,10 @@ p   { color: var(--text-2); line-height: 1.7; }
 }
 @media(min-width:900px)  { .grid-4 { grid-template-columns:repeat(4,1fr); } }
 @media(min-width:768px)  { .grid-lg-2 { grid-template-columns:1fr 1fr; } }
+
+@media(min-width: 768px) {
+  .grid-form { grid-template-columns: 1fr 1.2fr; }
+}
 
 /* ── BUTTONS — exact spec ── */
 .btn {
